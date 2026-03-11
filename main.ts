@@ -3,63 +3,86 @@ namespace SpriteKind {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     if (Random == 0) {
-        game.setGameOverMessage(false, "0")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 1) {
-        game.setGameOverMessage(false, "1")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 2) {
-        game.setGameOverMessage(false, "2")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 3) {
-        game.setGameOverMessage(false, "3")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 4) {
-        game.setGameOverMessage(false, "4")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 5) {
-        game.setGameOverMessage(false, "5")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 6) {
-        game.setGameOverMessage(false, "6")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 7) {
-        game.setGameOverMessage(false, "7")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 8) {
-        game.setGameOverMessage(false, "8")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 9) {
-        game.setGameOverMessage(false, "9")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 10) {
-        game.setGameOverMessage(false, "10")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     }
-    game.gameOver(false)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     if (Random == 0) {
-        game.setGameOverMessage(false, "0")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 1) {
-        game.setGameOverMessage(false, "1")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 2) {
-        game.setGameOverMessage(false, "2")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 3) {
-        game.setGameOverMessage(false, "3")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 4) {
-        game.setGameOverMessage(false, "4")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 5) {
-        game.setGameOverMessage(false, "5")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 6) {
-        game.setGameOverMessage(false, "6")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 7) {
-        game.setGameOverMessage(false, "7")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 8) {
-        game.setGameOverMessage(false, "8")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 9) {
-        game.setGameOverMessage(false, "9")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     } else if (Random == 10) {
-        game.setGameOverMessage(false, "10")
+        game.showLongText("", DialogLayout.Full)
+        game.gameOver(false)
     }
-    game.gameOver(false)
 })
 let projectile: Sprite = null
 let Random = 0
-game.showLongText("", DialogLayout.Full)
+game.showLongText("Everyday Little Penguins face a multitude of issues, endangering their species. From oil spills, littering and natural predators, the species has now quickly become endangered. So today you'll play as a little penguin going for a daily swim to find food and experience all of these endangering factors.", DialogLayout.Full)
 timer.after(30000, function () {
     Diffculty += 1
     timer.after(30000, function () {
         Diffculty += 1
+        timer.after(30000, function () {
+            game.gameOver(true)
+        })
     })
 })
 Random = randint(0, 10)
@@ -159,20 +182,20 @@ let Bottle_5 = sprites.create(img`
     ....................
     ....................
     ....................
-    .........888........
-    .........888........
-    ......888888888.....
-    ........fffff.......
-    .......8888888......
-    .......8998888......
-    .......8988888......
-    .......8888888......
-    .......8888888......
-    .......8888888......
-    ......888888888.....
-    ......fffffffff.....
     ....................
     ....................
+    ....................
+    ...e..e....e...e....
+    ...e..e....e...e...e
+    ...ee.ee..eee.ee...e
+    ..eee.eeeeeee.eee.ee
+    ..eeeeeeeeeeee44eeee
+    .eeeeeeeeee444fff4ee
+    eeeeeee4444fffffff4e
+    eeee444ffffffff444ee
+    .e44fffffff44444eeee
+    ..ee44f444444eeeee..
+    ...eee444eeeeee.....
     `, SpriteKind.Enemy)
 Bottle_1.setPosition(randint(5, 160), 0)
 Bottle_1.setVelocity(0, randint(1, 100))
