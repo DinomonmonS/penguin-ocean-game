@@ -3,89 +3,57 @@ namespace SpriteKind {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     if (Random == 0) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 1/10. The Antarctic Treaty of 1959 makes it illegal to harm, or in any way interfere with, a penguin or its eggs.", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 1) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 2/10. The Westren Australian colony of Little Penguins has been reduced by 90% in the last 20 years.", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 2) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 3/10. Each year at least 50 little penguins get tangled in littered fishing nets.", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 3) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 4/10. Due to introduced dogs and cats,15 little penguins die each night to attacks by wild cats and dogs.", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 4) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 5/10.Due to the increased frequency of drought and extreme temperatures in Southern Australia has led to an increased fire risk. And these fires stop Little Penguins from nesting or emerging during daylight hours.", DialogLayout.Full)
         game.gameOver(false)
-    } else if (Random == 5) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 6) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 7) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 8) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 9) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 10) {
-        game.showLongText("", DialogLayout.Full)
+    } else {
         game.gameOver(false)
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     if (Random == 0) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 6/10. In 2011, 380 little penguins had to be relocated due to one oil spill.", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 1) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 7/10. Due to artificial lights being left on a night, Little Penguins lose their sense of direction and struggle to find their nests", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 2) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 8/10. Climate change is altering ocean conditions and food availability, making it harder for penguins to find prey. ", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 3) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 9/10.Boats and watercraft can strike penguins at sea, causing injuries or death in some colonies.", DialogLayout.Full)
         game.gameOver(false)
     } else if (Random == 4) {
-        game.showLongText("", DialogLayout.Full)
+        game.showLongText("Fact 10/10. Introduced predators such as foxes, cats, dogs, rats, ferrets and stoats regularly attack little penguins, especially eggs and chicks in their nests.", DialogLayout.Full)
         game.gameOver(false)
-    } else if (Random == 5) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 6) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 7) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 8) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 9) {
-        game.showLongText("", DialogLayout.Full)
-        game.gameOver(false)
-    } else if (Random == 10) {
-        game.showLongText("", DialogLayout.Full)
+    } else {
         game.gameOver(false)
     }
 })
 let projectile: Sprite = null
 let Random = 0
-game.showLongText("Everyday Little Penguins face a multitude of issues, endangering their species. From oil spills, littering and natural predators, the species has now quickly become endangered. So today you'll play as a little penguin going for a daily swim to find food and experience all of these endangering factors.", DialogLayout.Full)
+game.showLongText("Everyday Little Penguins face a multitude of issues. From littering to oil spills. Many factors affect their daily lives of searching for food. So today, you'll play as a little penguin and experience a few of theses factors. ", DialogLayout.Full)
 timer.after(30000, function () {
-    Diffculty += 1
-    timer.after(30000, function () {
-        Diffculty += 1
-        timer.after(30000, function () {
+    Diffculty += 0.5
+    timer.after(60000, function () {
+        Diffculty += 0.5
+        timer.after(90000, function () {
             game.gameOver(true)
         })
     })
 })
-Random = randint(0, 10)
+Random = randint(0, 5)
 info.setScore(0)
 scene.setBackgroundImage(assets.image`myImage`)
 let Diffculty = 1
